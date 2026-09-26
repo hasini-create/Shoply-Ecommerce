@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>shoply</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header class="header">
+
+        <div class="logo">
+            shoply
+        </div>
+
+
+        <div class="search">
+
+            <input type="text"
+                   id="searchBox"
+                   placeholder="Search Products">
+
+            <button onclick="searchProduct()">
+                Search
+            </button>
+
+        </div>
+
+
+        <!-- TOP RIGHT ACCOUNT -->
+
+        <div class="account">
+
+            <span id="welcomeUser"></span>
+
+            <a href="login.html" id="loginLink">
+                Login
+            </a>
+
+            <span>|</span>
+
+            <a href="register.html" id="registerLink">
+                Register
+            </a>
+
+            <span>|</span>
+
+            <a href="#" onclick="showCart()">
+                Cart (<span id="cartCount">0</span>)
+            </a>
+
+            <button id="logoutButton"
+                    onclick="logout()"
+                    style="display:none;">
+                Logout
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- CATEGORY -->
+
+    <nav class="categories">
+
+        <a href="#">Fashion</a>
+        <a href="#">Groceries</a>
+        <a href="#">Electronics</a>
+        <a href="#">Mobiles</a>
+        <a href="#">Appliances</a>
+        <a href="#">Beauty</a>
+        <a href="#">Books</a>
+        <a href="#">Sports</a>
+
+    </nav>
+
+
+    <!-- BANNER -->
+
+    <section class="banner">
+
+        <div class="banner-content">
+
+            <h1>
+                Welcome to shoply
+            </h1>
+
+            <p>
+                Shop Everything You Love in One Place
+            </p>
+
+            <button onclick="scrollToProducts()">
+                Shop Now
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- PRODUCTS -->
+
+    
+
+<div class="products" id="products">
+
+
+    <!-- FASHION -->
+
+    <div class="product" data-category="fashion">
+
+        <div class="product-image">
+            <img src="c:\Users\hasin\Pictures\Screenshots\tshirt.jpg">
+        </div>
+
+        <div class="product-info">
+
+            <span class="product-category">
+                Fashion
+            </span>
+
+            <h3>Premium T-Shirt</h3>
+
+            <div class="rating">
+                ★★★★★
+            </div>
+
+            <div class="price">
+                ₹599
+            </div>
+
+            <button
+                class="add-cart"
+                onclick="addToCart('Premium T-Shirt',599)">
+
+                Add to Cart
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <div class="product" data-category="fashion">
+
+        <div class="product-image">
+            <img src="c:\Users\hasin\Pictures\Screenshots\dress.png">
+        </div>
+
+        <div class="product-info">
+
+            <span class="product-category">
+                Fashion
+            </span>
+
+            <h3>Elegant Dress</h3>
+
+            <div class="rating">
+                ★★★★★
+            </div>
+
+            <div class="price">
+                ₹1,299
+            </div>
+
+            <button
+                class="add-cart"
+                onclick="addToCart('Elegant Dress',1299)">
+
+                Add to Cart
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- BEAUTY -->
+
+    <div class="product" data-category="beauty">
+
+        <div class="product-image">
+            <img src="c:\Users\hasin\Pictures\Screenshots\lipstick.png">
+        </div>
+
+        <div class="product-info">
+
+            <span class="product-category">
+                Beauty
+            </span>
+
+            <h3>Matte Lipstick</h3>
+
+            <div class="rating">
+                ★★★★★
+            </div>
+
+            <div class="price">
+                ₹499
+            </div>
+
+            <button
+                class="add-cart"
+                onclick="addToCart('Matte Lipstick',499)">
+
+                Add to Cart
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <div class="product" data-category="beauty">
+
+        <div class="product-image">
+            <img src="c:\Users\hasin\Pictures\Screenshots\perfume.png">
+        </div>
+
+        <div class="product-info">
+
+            <span class="product-category">
+                Beauty
+            </span>
+
+            <h3>Luxury Perfume</h3>
+
+            <div class="rating">
+                ★★★★☆
+            </div>
+
+            <div class="price">
+                ₹899
+            </div>
+
+            <button
+                class="add-cart"
+                onclick="addToCart('Luxury Perfume',899)">
+
+                Add to Cart
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- SHOES -->
+
+    <div class="product" data-category="camera">
+
+        <div class="product-image">
+            <img src="c:\Users\hasin\Pictures\Screenshots\cmera.png">
+        </div>
+
+        <div class="product-info">
+
+            <span class="product-category">
+                Shoes
+            </span>
+
+            <h3>photography</h3>
+
+            <div class="rating">
+                ★★★★★
+            </div>
+
+            <div class="price">
+              50000
+            </div>
+
+            <button
+                class="add-cart"
+                onclick="addToCart('camera',1499)">
+
+                Add to Cart
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <div class="product" data-category="shoes">
+
+        <div class="product-image">
+            <img src="c:\Users\hasin\Pictures\Screenshots\heels.png">
+        </div>
+
+        <div class="product-info">
+
+            <span class="product-category">
+                Shoes
+            </span>
+
+            <h3>Elegant Heels</h3>
+
+            <div class="rating">
+                ★★★★☆
+            </div>
+
+            <div class="price">
+                ₹1,699
+            </div>
+
+            <button
+                class="add-cart"
+                onclick="addToCart('Elegant Heels',1699)">
+
+                Add to Cart
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- ELECTRONICS -->
+
+    <div class="product" data-category="electronics">
+
+        <div class="product-image">
+            <img src="c:\Users\hasin\Pictures\Screenshots\phone.png">
+        </div>
+
+        <div class="product-info">
+
+            <span class="product-category">
+                Electronics
+            </span>
+
+            <h3>Smartphone</h3>
+
+            <div class="rating">
+                ★★★★★
+            </div>
+
+            <div class="price">
+                ₹50,000
+            </div>
+
+            <button
+                class="add-cart"
+                onclick="addToCart('Smartphone',19999)">
+
+                Add to Cart
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <div class="product" data-category="electronics">
+
+        <div class="product-image">
+            <img src="c:\Users\hasin\Pictures\Screenshots\headphones.png">
+        </div>
+
+        <div class="product-info">
+
+            <span class="product-category">
+                Electronics
+            </span>
+
+            <h3>Wireless Headphones</h3>
+
+            <div class="rating">
+                ★★★★★
+            </div>
+
+            <div class="price">
+                ₹1,499
+            </div>
+
+            <button
+                class="add-cart"
+                onclick="addToCart('Wireless Headphones',1499)">
+
+                Add to Cart
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- HOME -->
+
+    <div class="product" data-category="home">
+
+        <div class="product-image">
+            <img src="c:\Users\hasin\Pictures\Screenshots\mixer.png">
+        </div>
+
+        <div class="product-info">
+
+            <span class="product-category">
+                Home & Living
+            </span>
+
+            <h3>Kitchen Mixer</h3>
+
+            <div class="rating">
+                ★★★★☆
+            </div>
+
+            <div class="price">
+                ₹2,499
+            </div>
+
+            <button
+                class="add-cart"
+                onclick="addToCart('Kitchen Mixer',2499)">
+
+                Add to Cart
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <div class="product" data-category="home">
+
+        <div class="product-image">
+            <img src="c:\Users\hasin\Pictures\Screenshots\lamps.png">
+        </div>
+
+        <div class="product-info">
+
+            <span class="product-category">
+                Home & Living
+            </span>
+
+            <h3>Aesthetic Table Lamp</h3>
+
+            <div class="rating">
+                ★★★★★
+            </div>
+
+            <div class="price">
+                ₹999
+            </div>
+
+            <button
+                class="add-cart"
+                onclick="addToCart('Table Lamp',999)">
+
+                Add to Cart
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- ACCESSORIES -->
+
+    <div class="product" data-category="accessories">
+
+        <div class="product-image">
+            <img src="c:\Users\hasin\Pictures\Screenshots\handbag.png">
+        </div>
+
+        <div class="product-info">
+
+            <span class="product-category">
+                Accessories
+            </span>
+
+            <h3>Designer Handbag</h3>
+
+            <div class="rating">
+                ★★★★★
+            </div>
+
+            <div class="price">
+                ₹25,000
+            </div>
+
+            <button
+                class="add-cart"
+                onclick="addToCart('Designer Handbag',1099)">
+
+                Add to Cart
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <div class="product" data-category="accessories">
+
+        <div class="product-image">
+            <img src="c:\Users\hasin\Pictures\Screenshots\watches.png">
+        </div>
+
+        <div class="product-info">
+
+            <span class="product-category">
+                Accessories
+            </span>
+
+            <h3>Classic Watch</h3>
+
+            <div class="rating">
+                ★★★★☆
+            </div>
+
+            <div class="price">
+                ₹1,999
+            </div>
+
+            <button
+                class="add-cart"
+                onclick="addToCart('Classic Watch',1999)">
+
+                Add to Cart
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- PERSONAL CARE -->
+
+    <div class="product" data-category="personal">
+
+        <div class="product-image">
+            <img src="c:\Users\hasin\Pictures\Screenshots\skincare.png">
+        </div>
+
+        <div class="product-info">
+
+            <span class="product-category">
+                Personal Care
+            </span>
+
+            <h3>Skincare Set</h3>
+
+            <div class="rating">
+                ★★★★★
+            </div>
+
+            <div class="price">
+                ₹799
+            </div>
+
+            <button
+                class="add-cart"
+                onclick="addToCart('Skincare Set',799)">
+
+                Add to Cart
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <div class="product" data-category="personal">
+
+        <div class="product-image">
+            <img src="c:\Users\hasin\Pictures\Screenshots\haircare.png">
+        </div>
+
+        <div class="product-info">
+
+            <span class="product-category">
+                Personal Care
+            </span>
+
+            <h3>Hair Care Kit</h3>
+
+            <div class="rating">
+                ★★★★☆
+            </div>
+
+            <div class="price">
+                ₹899
+            </div>
+
+            <button
+                class="add-cart"
+                onclick="addToCart('Hair Care Kit',899)">
+
+                Add to Cart
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- OFFER -->
+
+<div class="offer">
+
+    <h2>
+        ✨ Special Offers Just For You
+    </h2>
+
+    <p>
+        Discover new products and enjoy amazing deals.
+    </p>
+
+</div>
+
+
+
+    <!-- OFFERS -->
+
+    <section class="offers">
+
+        <h2>
+            Today's Special Offers
+        </h2>
+
+        <div class="offer-container">
+
+            <div>
+                🔥
+                <b>20% Discount</b>
+                <p>Fashion Products</p>
+            </div>
+
+            <div>
+                🚚
+                <b>Free Delivery</b>
+                <p>Above ₹999</p>
+            </div>
+
+            <div>
+                🎁
+                <b>Buy One Get One</b>
+                <p>Selected Products</p>
+            </div>
+
+            <div>
+                💳
+                <b>Extra Cashback</b>
+                <p>On Electronics</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SERVICES -->
+
+    <section class="services">
+
+        <div>
+            <h3>↩️ Easy Returns</h3>
+            <p>Simple return process</p>
+        </div>
+
+        <div>
+            <h3>🎧 24 × 7 Support</h3>
+            <p>We are here to help</p>
+        </div>
+
+        <div>
+            <h3>🔒 Secure Payment</h3>
+            <p>Safe and secure</p>
+        </div>
+
+        <div>
+            <h3>⚡ Fast Delivery</h3>
+            <p>Quick doorstep delivery</p>
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <h2>
+           shoply
+        </h2>
+
+        <p>
+            Home | Products | About Us | Contact Us | Help
+        </p>
+
+        <p>
+            Copyright © 2026 shoply
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
